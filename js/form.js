@@ -8,7 +8,7 @@ botaoAdicionar.addEventListener("click", function (event) {
     var paciente = obtemPacienteDoFormulario(form);
     
     //cria a tr e td do apciente
-	var pacientTr = montaTr(paciente)
+	var pacienteTr = montaTr(paciente)
 	
     var erros = validaPaciente(paciente);
 	console.log(erros);
