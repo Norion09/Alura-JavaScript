@@ -11,11 +11,14 @@ for(var i = 0; i < pacientes.length; i++){
 
     var tdAltura = paciente.querySelector(".info-altura");
     var altura = tdAltura.textContent;
+	
+	/*var tdNome = paciente.querySelector(".info-nome");
+    var nome = tdNome.textContent;*/
 
     var tdIMC = paciente.querySelector(".info-imc");
 
-    var pesoValido = true;
-    if(peso <= 0 || peso >= 1000){
+    var pesoValido = validaPeso(peso);
+    if(!pesoValido){
         console.log("peso invalido");
         pesoValido = false;
         tdIMC.textContent = "Peso inválido";
@@ -24,16 +27,23 @@ for(var i = 0; i < pacientes.length; i++){
         //paciente.style.color = "red";
     }
 
-    var aulturaValida = true;
-    if(altura <= 0 || altura >= 3){
+    var alturaValida = validaAltura(altura);
+    if(!validaAltura){
         console.log("altura invalido");
         aulturaValida = false;
         tdIMC.textContent = "Altura invalida";
         paciente.classList.add("paciente-invalido");
         //paciente.style.backgroundColor = "lightcoral";
     }
-
-    if(aulturaValida == true && pesoValido == true){
+	
+	/*var nomeValido = validaNome(nome);
+	if(!validaNome){
+		console.log("nome invalido");
+        nomeValida = false;
+        paciente.classList.add("paciente-invalido");
+	}*/
+	
+    if(validaAltura && validaPeso){
         var imc = calculaIMC(peso,altura);
         tdIMC.textContent = imc.toFixed(2);//toFixed imprime só até numero de casa decimais determinadas
     }
@@ -45,4 +55,27 @@ function calculaIMC(peso,altura){
     return imc;
 }
 
-
+function validaPeso(peso){
+	if(peso >= 0 && peso <1000){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+function validaAltura(altura){
+	if(altura >= 0 && altura <3){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+/*function validaNome(nome){
+	if(nome != ''){
+	   return true; 
+	}
+	else{
+		return false;
+	}
+}*/
