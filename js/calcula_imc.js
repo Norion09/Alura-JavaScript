@@ -1,8 +1,10 @@
-var titulo = document.querySelector(".titulo");//Retorna o primeiro elemento dentro do documento
-titulo.textContent = "Aparecida Nutricionista";//altera o conteudo
+//Retorna o primeiro elemento dentro do documento
+var titulo = document.querySelector(".titulo");
+//altera o conteúdo
+titulo.textContent = "Aparecida Nutricionista";
 
-// calcular imc
-var pacientes = document.querySelectorAll(".paciente");//querySelectAll pega todos os pacientes
+//querySelectAll pega todos os pacientes
+var pacientes = document.querySelectorAll(".paciente");
 for(var i = 0; i < pacientes.length; i++){
     var paciente = pacientes[i];
     
@@ -63,14 +65,36 @@ function validaPeso(peso){
 		return false;
 	}
 }
+
 function validaAltura(altura){
-	if(altura >= 0 && altura <3){
+	if(altura >= 0 && altura < 3){
 		return true;
 	}
 	else{
 		return false;
 	}
 }
+
+function validaGordura(gordura){
+	if(gordura >= 0 && gordura < 50){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*function validaNome(nome){
 	if(nome != ''){
 	   return true; 

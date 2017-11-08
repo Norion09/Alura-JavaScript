@@ -137,7 +137,26 @@ button[disabled=disabled], button:disabled {
 .paciente-invalido{
     background-color: lightcoral;
 }
-#mensagem-erro{
+#mensagens-erro{
 	color: red;
 	padding-bottom: 0.3em;
+}
+
+
+
+
+.fadeOut{
+	opacity: 0;
+	transition: 0.5s;
+}
+
+
+#filtrar-tabela{
+	width: 200px;
+	height: 25px;
+	margin-bottom: 10px;
+}
+
+.invisivel{
+	display: none;
 }
